@@ -1,4 +1,3 @@
-//William Miller
 
 #include <iostream>
 #include <iomanip>
