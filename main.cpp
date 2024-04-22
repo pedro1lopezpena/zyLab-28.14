@@ -1,3 +1,5 @@
+// Authors: William Miller and Pedro Lopez
+
 #include <iostream>
 #include <iomanip>
 using namespace std;
