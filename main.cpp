@@ -19,7 +19,7 @@ char GetMenuOption() {
     cin >> option;
     // Ensure valid input
     while (option != 'a' && option != 'd' && option != 'c' && option != 'i' && option != 'o' && option != 'q') {
-        cout << "Choose a valid option:\n";
+        cout << "Choose an option:\n";
         cin >> option;
     }
     return option;
@@ -112,7 +112,7 @@ int main() {
  
     ShoppingCart cart(customerName, currentDate);
     cout << "\nCustomer name: " << customerName << endl;
-    cout << "Today's date: " << currentDate << endl;
+    cout << "Today's date: " << currentDate << "\n\n";
  
     char option = ' ';
     while (option != 'q') {
