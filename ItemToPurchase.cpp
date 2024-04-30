@@ -1,61 +1,80 @@
 // William Miller and Pedro Lopez
 
-#include <iostream>
-using namespace std;
 
 #include "ItemToPurchase.h"
 
-ItemToPurchase::ItemToPurchase() {
-    itemName = "none";
-    itemDescription = "none";
-    itemPrice = 0;
-    itemQuantity = 0;
+#include <iostream>
+
+ 
+ItemToPurchase::ItemToPurchase(const string& name, const string& description, int price, int quantity)
+
+    : itemName(name), itemDescription(description), itemPrice(price), itemQuantity(quantity) {}
+ 
+
+void ItemToPurchase::SetName(const string& name) {
+
+    itemName = name;
+
 }
 
-ItemToPurchase::ItemToPurchase(string t_name, string t_description, int t_price, int t_quantity) {
-    itemName = t_name;
-    itemDescription = t_description;
-    itemPrice = t_price;
-    itemQuantity = t_quantity;
-}
-
-void ItemToPurchase::SetName(string t_name){
-  itemName = t_name;
-}
 
 string ItemToPurchase::GetName() const {
-  return ItemName;
+
+    return itemName;
+
 }
 
-void ItemToPurchase::SetPrice(int t_price) {
-    itemPrice = t_price;
+ 
+void ItemToPurchase::SetPrice(int price) {
+
+    itemPrice = price;
+
 }
 
 int ItemToPurchase::GetPrice() const {
+
     return itemPrice;
+
 }
 
-void ItemToPurchase::SetQuantity(int t_quantity){
-  itemQuantity = t_quantity;
+
+void ItemToPurchase::SetQuantity(int quantity) {
+
+    itemQuantity = quantity;
+
+}
+ 
+
+int ItemToPurchase::GetQuantity() const {
+
+    return itemQuantity;
+
 }
 
-int ItemToPurchase::GetQuantity() const { 
-  return itemQuantity;
+
+void ItemToPurchase::SetDescription(const string& description) {
+
+    itemDescription = description;
+
 }
 
-void ItemToPurchase::SetDescription(string t_description) {
-    itemDescription = t_description;
-}
 
 string ItemToPurchase::GetDescription() const {
+
     return itemDescription;
+
+}
+ 
+
+void ItemToPurchase::PrintItemCost() const {
+
+    cout << itemName << " " << itemQuantity << " @ $" << itemPrice << " = $" << (itemQuantity * itemPrice) << endl;
+
 }
 
-void ItemToPurchase::PrintItemCost() {
-    cout << itemName << " " << itemQuantity << " @ $" << itemPrice << " = $" << (itemPrice * itemQuantity) << endl;
-}
+ 
+void ItemToPurchase::PrintItemDescription() const {
 
-void ItemToPurchase::PrintItemDescription() {
     cout << itemName << ": " << itemDescription << endl;
-}
 
+}
