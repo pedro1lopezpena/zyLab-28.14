@@ -1,80 +1,39 @@
 // William Miller and Pedro Lopez
 
 
-#include "ItemToPurchase.h"
-
-#include <iostream>
-
- 
-ItemToPurchase::ItemToPurchase(const string& name, const string& description, int price, int quantity)
-
-    : itemName(name), itemDescription(description), itemPrice(price), itemQuantity(quantity) {}
- 
-
-void ItemToPurchase::SetName(const string& name) {
-
-    itemName = name;
-
-}
+#ifndef ITEM_TO_PURCHASE_H
+#define ITEM_TO_PURCHASE_H
 
 
-string ItemToPurchase::GetName() const {
+#include <string>
+using namespace std;
 
-    return itemName;
-
-}
-
- 
-void ItemToPurchase::SetPrice(int price) {
-
-    itemPrice = price;
-
-}
-
-int ItemToPurchase::GetPrice() const {
-
-    return itemPrice;
-
-}
-
-
-void ItemToPurchase::SetQuantity(int quantity) {
-
-    itemQuantity = quantity;
-
-}
- 
-
-int ItemToPurchase::GetQuantity() const {
-
-    return itemQuantity;
-
-}
+class ItemToPurchase {
+   
+   public:
+      ItemToPurchase();
+      ItemToPurchase(string name, string description, 
+                  int price, int quantity = 0);
+      
+      void SetName(string name);
+      void SetDescription(string description);
+      void SetPrice(int price);
+      void SetQuantity(int quantity);
+      
+      string GetName() const;
+      string GetDescription() const;
+      int GetPrice() const;
+      int GetQuantity() const;
+      
+      void PrintItemCost();
+      void PrintItemDescription();
+   
+   private:
+      string itemName;
+      string itemDescription;
+      int itemPrice;
+      int itemQuantity;
+};
 
 
-void ItemToPurchase::SetDescription(const string& description) {
-
-    itemDescription = description;
-
-}
-
-
-string ItemToPurchase::GetDescription() const {
-
-    return itemDescription;
-
-}
- 
-
-void ItemToPurchase::PrintItemCost() const {
-
-    cout << itemName << " " << itemQuantity << " @ $" << itemPrice << " = $" << (itemQuantity * itemPrice) << endl;
-
-}
-
- 
-void ItemToPurchase::PrintItemDescription() const {
-
-    cout << itemName << ": " << itemDescription << endl;
-
-}
+#endif
